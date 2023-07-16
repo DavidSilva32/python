@@ -17,13 +17,20 @@ class Account:
         except ValueError:
             return print("Enter a number!")
 
-    def trasnfer_value(self, destinationAccount, value):
-        if self.balance > value:
-            destinationAccount.deposit(value)
-            self.balance -= value
-            return print("Transfer realized successfully!")
-        else:
-            return print("There is not enough value!") 
+    def transfer_value(self, destinationAccount, value):
+        try:
+            if self.balance > value:
+                destinationAccount.deposit(value)
+                self.balance -= value
+                return print(
+                    f"Transfer to the account{destinationAccount.number} realized successfully!"
+                )
+            else:
+                return print("There is not enough value!")
+        except:
+            print("Enter a number")
 
     def generate_extract(self):
-        print(f"Number: {self.number}\nBalance: {self.balance}")             
+        print(
+            f"Holders names: {self.customers[0].name}, {self.customers[1].name}\n{self.customers[0].name}'s Address: {self.customers[0].address}, {self.customers[1].name}'s Address: {self.customers[1].address}\nNumber: {self.number}\nBalance: {self.balance}\n"
+        )
