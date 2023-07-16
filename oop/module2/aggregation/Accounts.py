@@ -8,11 +8,14 @@ class Account:
         self.balance += value
 
     def withdraw(self, value):
-        if self.balance > value:
-            self.balance -= value
-            return print("Trasnfer realized successfully!")
-        else:
-            return print("Insufficient funds!")
+        try:
+            if self.balance > value:
+                self.balance -= value
+                return print("Withdraw realized successfully!")
+            else:
+                return print("Insufficient funds!")
+        except ValueError:
+            return print("Enter a number!")
 
     def trasnfer_value(self, destinationAccount, value):
         if self.balance > value:
