@@ -39,6 +39,11 @@ class Account:
             print("Enter a number")
 
     def generate_balance(self):
-        print(
-            f"Holders names: {self.customers[0].name}, {self.customers[1].name}\n{self.customers[0].name}'s Address: {self.customers[0].address}, {self.customers[1].name}'s Address: {self.customers[1].address}\nNumber: {self.number}\nBalance: {self.balance}\n"
-        )
+        if self.customers == []:
+            print(
+                f"Holders names: {self.customers[0].name}, {self.customers[1].name}\n{self.customers[0].name}'s Address: {self.customers[0].address}, {self.customers[1].name}'s Address: {self.customers[1].address}\nNumber: {self.number}\nBalance: {self.balance}\n"
+            )
+        else:
+            print(
+                f"Holders name: {self.customers.name}\n{self.customers.name}'s Address: {self.customers.address}\nNumber: {self.number}\nBalance: {self.balance}\n"
+            )
